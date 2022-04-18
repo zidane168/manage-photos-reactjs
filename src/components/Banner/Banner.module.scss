@@ -1,0 +1,21 @@
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+
+    background-image: url('../../assets/images/default_banner.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.title {
+    color: yellowgreen;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    text-shadow: 3px 0 0 black
+}

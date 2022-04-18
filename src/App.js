@@ -8,7 +8,6 @@ import NotFound from './components/NotFound'
 import AddEditPage from './features/Photo/pages/AddEdit';
 import MainPage from './features/Photo/pages/Main';
 import Header from './components/Header'
-import Banner from './components/Banner';
 
 const Photo = React.lazy(() => import('./features/Photo'));
 
