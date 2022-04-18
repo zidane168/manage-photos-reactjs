@@ -7,6 +7,8 @@ import './App.scss';
 import NotFound from './components/NotFound'
 import AddEditPage from './features/Photo/pages/AddEdit';
 import MainPage from './features/Photo/pages/Main';
+import Header from './components/Header'
+import Banner from './components/Banner';
 
 const Photo = React.lazy(() => import('./features/Photo'));
 
@@ -21,12 +23,14 @@ function App() {
             <Link to="/photos/1"> Go to photo edit page</Link>
           </ul>
 
+          <Header />
+
           <Routes>
 
             <Route path="/photos"     element={ <MainPage/>} />
             <Route path="/photos/add" element={ <AddEditPage/>} />
-            <Route path="/photos/1"   element={ <AddEditPage/>} />
-            <Route component={NotFound} />
+            <Route path="/photos/:photoId"   element={ <AddEditPage/>} />
+            <Route path="*" element={<NotFound/>} />
 
           </Routes>
           

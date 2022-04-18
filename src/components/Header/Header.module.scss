@@ -1,0 +1,21 @@
+
+
+.title {
+    font-weight: bold;
+}
+
+.link {
+    color: #000;
+    transition: all 0.25s ease-in-out 0s;
+
+    &:hover {
+        text-decoration: none;
+        color: violet;
+    }
+}
+
+.active {
+
+    text-decoration: none;
+    color: violet
+}
