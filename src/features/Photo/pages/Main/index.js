@@ -7,7 +7,7 @@ import Images from "../../../../constants/images";
 function MainPage(props) {
     return (
         <div>
-           <Banner title="Your awesome, love you all" backgroundURL={ Images.BANNER }> </Banner>
+           <Banner title="香港航空✈️公司" backgroundURL={ Images.BANNER }> </Banner>
 
            <Container className="text-center">
                 <Link to='/photos/add'> Add new photo </Link>

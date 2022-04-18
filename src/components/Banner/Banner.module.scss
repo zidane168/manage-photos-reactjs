@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15rem;
+    height: 30rem;
 
     background-image: url('../../assets/images/default_banner.jpg');
     background-position: center;
@@ -12,10 +12,11 @@
 
 .title {
     color: yellowgreen;
+    font-size: 3.8rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 15rem;
+    height: 30rem;
     text-shadow: 3px 0 0 black
 }
