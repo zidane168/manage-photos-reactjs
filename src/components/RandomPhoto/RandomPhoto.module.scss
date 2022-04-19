@@ -1,0 +1,13 @@
+.image{
+    width: 380px;
+    height: 380px;
+    border-radius: 10px;
+    display: block;
+    border: 1px solid olivedrab;
+
+    &> img {
+        width: 100%;
+        border-radius: 10px;
+        vertical-align: middle;
+    }
+}

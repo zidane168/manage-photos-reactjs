@@ -8,6 +8,7 @@ import { Formik, Form, FastField } from 'formik'
 
 import InputField from 'custom-fields/InputField'
 import SelectField from 'custom-fields/SelectField'
+import RandomPhotoField from 'custom-fields/RandomPhotoField'
 
 PhotoForm.propTypes = {
     onSubmit: PropTypes.func
@@ -18,7 +19,6 @@ PhotoForm.defaultProps = {
 }
 
 function PhotoForm(props) {
-
 
     const initialValue = {
         title: '',
@@ -54,8 +54,15 @@ function PhotoForm(props) {
                                         component={ SelectField }
 
                                         label="Category"
-                                        placeholder="Ex: This is title of photo"
+                                        placeholder="Ex: This is option of photo"
                                         options={ PHOTO_CATEGORY_OPTIONS }
+                                    />
+
+                                    <FastField
+                                        name="photo"
+                                        component={ RandomPhotoField }
+
+                                        label="Photo"
                                     />
 
 
