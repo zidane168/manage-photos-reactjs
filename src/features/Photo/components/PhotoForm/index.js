@@ -24,7 +24,7 @@ function PhotoForm(props) {
 
     const initialValue = {
         title: '',
-        categoryId: null,
+        categoryId: 1,
         photo: ''
     }
 
@@ -42,7 +42,7 @@ function PhotoForm(props) {
                     <Formik 
                         initialValues={initialValue}
                         validationSchema={validateSchema}
-                        value={values => { console.log(values)} }
+                        value={values => { console.log(values)} }       // co button submit moi co dong nay
                     >
                         { formikProps => {
 
@@ -76,16 +76,6 @@ function PhotoForm(props) {
                                         label="Photo"
                                     />
 
-
-                                    <FormGroup>
-                                        <Label for="categoryId"> Photo </Label>
-                                        <div>
-                                            <Button type="button" outline color="primary"> Random a photo </Button>
-                                            <div>
-                                                <img width="200px" height="200px" src={Images.BANNER}  alt="Banner demo"/>
-                                            </div>
-                                        </div>
-                                    </FormGroup>
 
                                     <FormGroup>
                                         <Button type="submit" color="primary"> Add to album </Button>
