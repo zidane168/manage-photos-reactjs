@@ -10,6 +10,8 @@ import InputField from 'custom-fields/InputField'
 import SelectField from 'custom-fields/SelectField'
 import RandomPhotoField from 'custom-fields/RandomPhotoField'
 
+import * as Yup from 'yup'
+
 PhotoForm.propTypes = {
     onSubmit: PropTypes.func
 }
@@ -23,7 +25,14 @@ function PhotoForm(props) {
     const initialValue = {
         title: '',
         categoryId: null,
+        photo: ''
     }
+
+    const validateSchema = Yup.object().shape({
+        title: Yup.string().required('This fields is required'),
+        categoryId: Yup.number().required('This fields is required').nullable(),
+        photo: Yup.string().required('This fields is required'),
+    })
 
     return (
         <Container> 
@@ -32,6 +41,8 @@ function PhotoForm(props) {
                 <Col className="col-md-8">
                     <Formik 
                         initialValues={initialValue}
+                        validationSchema={validateSchema}
+                        value={values => { console.log(values)} }
                     >
                         { formikProps => {
 
@@ -77,7 +88,7 @@ function PhotoForm(props) {
                                     </FormGroup>
 
                                     <FormGroup>
-                                        <Button color="primary"> Add to album </Button>
+                                        <Button type="submit" color="primary"> Add to album </Button>
                                     </FormGroup> 
                                 </Form>
                             )

@@ -1,7 +1,7 @@
 
 import PropTypes from 'prop-types'
 import React from 'react'
-import { FormGroup, Label, Input } from 'reactstrap'
+import { FormGroup, Label } from 'reactstrap'
 
 import Select from 'react-select'
 

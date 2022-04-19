@@ -5,7 +5,6 @@ import Images from 'constants/images'
 import styles from './AddEdit.module.scss'
 import Banner from 'components/Banner'
 
-
 AddEditPage.propTypes = {};
 
 function AddEditPage(props) {
