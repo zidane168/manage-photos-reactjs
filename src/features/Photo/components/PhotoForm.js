@@ -1,5 +1,5 @@
-import { PHOTO_CATEGORY_OPTIONS } from './../../../constants/global.js'
-import Images from './../../../constants/images.js'
+import { PHOTO_CATEGORY_OPTIONS } from 'constants/global.js'
+import Images from 'constants/images.js'
 
 import PropTypes from 'prop-types'
 import React from 'react'

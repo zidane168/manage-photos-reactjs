@@ -1,9 +1,10 @@
 import React from 'react'
-import Banner from "./../../../../components/Banner"
-import PhotoForm from "./../../components/PhotoForm"
-import Images from './../../../../constants/images'
+import PhotoForm from "features/Photo/components/PhotoForm"
+import Images from 'constants/images'
 
 import styles from './AddEdit.module.scss'
+import Banner from 'components/Banner'
+
 
 AddEditPage.propTypes = {};
 
