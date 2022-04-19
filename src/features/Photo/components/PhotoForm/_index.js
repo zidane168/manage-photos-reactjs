@@ -22,6 +22,7 @@ function PhotoForm(props) {
                 <Col className="col-md-2"></Col>
                 <Col className="col-md-8">
                     <Form>
+                    
                         <FormGroup>
                             <Label for="titleId"> Title </Label>
                             <Input name="title" id="titleId" placeholder="Eg: Wow nature ..."/>
