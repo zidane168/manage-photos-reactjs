@@ -20,7 +20,7 @@ function MainPage(props) {
     const handlePhotoEditClick = (photo) => {
         console.log('edit: ', photo)
 
-        navigate('/photos');
+        navigate(`/photos/${photo.id}`)
     }
 
     const handlePhotoRemoveClick = (photo) => {

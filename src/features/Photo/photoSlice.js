@@ -51,7 +51,6 @@ const photo = createSlice({
             const newPhotos = state.filter(photo => photo.id != action.payload)
             return newPhotos
         }
-        
     }
 })
 
