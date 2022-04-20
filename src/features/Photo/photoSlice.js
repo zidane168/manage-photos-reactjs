@@ -33,7 +33,7 @@ const initialPhotos = [
     },
     {
         id: 29490,
-        categoryId: 6,
+        categoryId: 1,
         photo: 'https://picsum.photos/id/1055/300/300',
         title: 'Photo id=29490'
     },

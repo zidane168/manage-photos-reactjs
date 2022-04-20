@@ -32,7 +32,7 @@ function AddEditPage(props) {
             console.log(`Form submit: `, values);
 
             setTimeout(() => {
-                values.id = Math.floor(Math.random()*90000) + 10000;
+                values.id = Math.floor(Math.random() * 90000) + 10000;
                 const action = addPhoto(values) // action from reduce (photoSlice)
                 console.log({ action })
                 dispatch(action);
@@ -56,7 +56,7 @@ function AddEditPage(props) {
 
             <div className={ styles.form }>
                 <PhotoForm 
-                    initialValue = { initialValue }
+                    initialValues = { initialValue }
                     onSubmit={ handleSubmit } />
             </div>
         </div>
