@@ -2,16 +2,16 @@ import React from 'react'
 import PhotoForm from "features/Photo/components/PhotoForm"
 import Images from 'constants/images'
 
-import styles from './AddEdit.module.scss'
+import styles from './Add.module.scss'
 import Banner from 'components/Banner'
 import { useDispatch } from 'react-redux'
 
 import { addPhoto } from 'features/Photo/photoSlice'
 import { useNavigate } from 'react-router-dom'
 
-AddEditPage.propTypes = {};
+AddPage.propTypes = {};
 
-function AddEditPage(props) {
+function AddPage(props) {
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -63,4 +63,4 @@ function AddEditPage(props) {
     )
 }
 
-export default AddEditPage;
+export default AddPage;

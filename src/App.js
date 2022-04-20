@@ -5,14 +5,14 @@ import { BrowserRouter , Route, Routes, Link } from 'react-router-dom'
 
 import './App.scss';
 import NotFound from './components/NotFound'
-// import AddEditPage from './features/Photo/pages/AddEdit';
+// import AddPage from './features/Photo/pages/AddEdit';
 // import MainPage from './features/Photo/pages/Main';
 import Header from './components/Header'
 
 // const Photo = React.lazy(() => import('./features/Photo'));
 
 const MainPage    = React.lazy(() => import('./features/Photo/pages/Main'))
-const AddEditPage = React.lazy(() => import('./features/Photo/pages/AddEdit'))
+const AddPage     = React.lazy(() => import('./features/Photo/pages/Add'))
 const EditPage    = React.lazy(() => import('./features/Photo/pages/Edit'))
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
           <Routes>
 
             <Route path="/photos"     element={ <MainPage/>} />
-            <Route path="/photos/add" element={ <AddEditPage/>} />
+            <Route path="/photos/add" element={ <AddPage/>} />
             <Route path="/photos/:photoId"   element={ <EditPage/>} />
             <Route path="*" element={<NotFound/>} />
 
