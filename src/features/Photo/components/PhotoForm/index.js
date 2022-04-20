@@ -1,9 +1,8 @@
 import { PHOTO_CATEGORY_OPTIONS } from 'constants/global.js'
-import Images from 'constants/images.js'
 
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Row, Col, Button, FormGroup, Input, Label, Container, Spinner } from 'reactstrap'
+import { Row, Col, Button, FormGroup, Container, Spinner } from 'reactstrap'
 import { Formik, Form, FastField } from 'formik'
 
 import InputField from 'custom-fields/InputField'
@@ -22,11 +21,14 @@ PhotoForm.defaultProps = {
 
 function PhotoForm(props) {
 
-    const initialValue = {
-        title: '',
-        categoryId: 1,
-        photo: ''
-    }
+    const { initialValues, isEdit } = props;
+    // const initialValue = {
+    //     title: '',
+    //     categoryId: 1,
+    //     photo: ''
+    // }
+
+    console.log('initialValues: PhotoForm: ', initialValues)
 
     const validateSchema = Yup.object().shape({
         title: Yup.string().required('This fields is required'),
@@ -40,7 +42,7 @@ function PhotoForm(props) {
                 <Col className="col-md-2"></Col>
                 <Col className="col-md-8">
                     <Formik 
-                        initialValues={initialValue}
+                        initialValues={ initialValues }
                         validationSchema={validateSchema}
                         onSubmit={props.onSubmit}       // co button submit moi co dong nay
                     >
@@ -48,7 +50,6 @@ function PhotoForm(props) {
 
                             const { values, errors, touched, isSubmitting } = formikProps;
                             // console.log({ values, errors, touched })
-
 
                             return(
                                 <Form>
@@ -72,14 +73,13 @@ function PhotoForm(props) {
                                     <FastField
                                         name="photo"
                                         component={ RandomPhotoField }
-
                                         label="Photo"
                                     />
 
-
                                     <FormGroup>
-                                        <Button type="submit" color="primary"> 
-                                            { isSubmitting && <Spinner size="md" />}           {/* dang submit , khi click submit chua chay xong va hien thi cai Spinner (reactstrap) */}                                     Add to album 
+                                        <Button type="submit" color={ isEdit ? 'success' : 'primary' }> 
+                                            { isSubmitting && <Spinner size="md" />}           {/* dang submit , khi click submit chua chay xong va hien thi cai Spinner (reactstrap) */}                                    
+                                            { isEdit ? "Edit to Album" : "Add to Album" }
                                         </Button>
                                     </FormGroup> 
                                 </Form>

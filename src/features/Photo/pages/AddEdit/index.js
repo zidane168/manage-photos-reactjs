@@ -44,12 +44,20 @@ function AddEditPage(props) {
       
     }
 
+    const initialValue = {
+        title: '',
+        categoryId: 1,
+        photo: ''
+    }
+
     return (
         <div>
             <Banner title="Pick your beautiful photo" backgroundURL={ Images.ADDEDIT_BANNER }/>
 
             <div className={ styles.form }>
-                <PhotoForm onSubmit={ handleSubmit } />
+                <PhotoForm 
+                    initialValue = { initialValue }
+                    onSubmit={ handleSubmit } />
             </div>
         </div>
     )
