@@ -1,0 +1,29 @@
+.position-relative {
+    position: relative;
+}
+
+.photoList_title {
+    position: absolute;
+    top: 30%;
+    transform: translate(60%, 50%);
+    color: white;
+    font-size: 2rem;
+    text-shadow: 1px 1px 0px black;
+}
+
+.photoList_editBtn {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    font-size: 1.5rem;
+    padding: 10px 30px;
+}
+
+
+.photoList_deleteBtn {
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    font-size: 1.5rem;
+    padding: 10px 30px;
+}
