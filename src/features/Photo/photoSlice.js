@@ -46,10 +46,15 @@ const photo = createSlice({
         addPhoto: (state, action) => {
             const newPhoto = action.payload
             state.push(newPhoto)    // ko co return, ko can clone moi 
+        },
+        removePhoto: (state, action) => {
+            const newPhotos = state.filter(photo => photo.id != action.payload)
+            return newPhotos
         }
+        
     }
 })
 
 const { reducer, actions } = photo;
-export const { addPhoto } = actions;
+export const { addPhoto, removePhoto } = actions;
 export default reducer;

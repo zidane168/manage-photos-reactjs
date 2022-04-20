@@ -13,7 +13,20 @@ PhotoList.defaultProps = {
 
 function PhotoList(props) {
 
-    const { items, arr } = props 
+    const { items, onPhotoEditClick, onPhotoRemoveClick } = props 
+
+    const handleEdit = (item) => {
+        if (onPhotoEditClick ) {
+            onPhotoEditClick(item)
+        }
+    }
+
+    const handleRemove = (item) => {
+        if (onPhotoRemoveClick) {
+            onPhotoRemoveClick(item)        // goi lai callback
+        }
+    }
+
     console.log('-------- items: ', items)
     return (
         <Row className="photoList">
@@ -24,8 +37,12 @@ function PhotoList(props) {
                     <Col className='col-md-4 position-relative mb-30' key={ index }>
                         <img src={ item.photo } alt = { item.title } />
                         <div className="photoList_title">  { item.title } </div> 
-                        <button className="btn btn-lg btn-outline-warning photoList_editBtn text-white bold"> Edit </button>
-                        <button className="btn btn-lg btn-danger photoList_deleteBtn bold"> Remove </button>
+                        <button 
+                            onClick={ () => handleEdit(item) }
+                            className="btn btn-lg btn-outline-warning photoList_editBtn text-white bold"> Edit </button>
+                        <button 
+                            onClick={ () => handleRemove(item) }
+                            className="btn btn-lg btn-danger photoList_deleteBtn bold"> Remove </button>
                     </Col>
                 );
             })

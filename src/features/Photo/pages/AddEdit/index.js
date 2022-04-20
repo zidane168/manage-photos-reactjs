@@ -31,9 +31,8 @@ function AddEditPage(props) {
         return new Promise(resolve => {
             console.log(`Form submit: `, values);
 
-
             setTimeout(() => {
-
+                values.id = Math.floor(Math.random()*90000) + 10000;
                 const action = addPhoto(values) // action from reduce (photoSlice)
                 console.log({ action })
                 dispatch(action);
@@ -44,7 +43,6 @@ function AddEditPage(props) {
         })
       
     }
-
 
     return (
         <div>

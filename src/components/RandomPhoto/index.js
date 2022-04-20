@@ -20,7 +20,7 @@ RandomPhoto.defaultProps = {
 
 const getRandomImageURL = () => {
     let id = Math.trunc(Math.random() * 2000)
-    return `http://picsum.photos/id/${id}/380/380`;
+    return `http://picsum.photos/id/${id}/300/300`;
 } 
 
 function RandomPhoto(props) {

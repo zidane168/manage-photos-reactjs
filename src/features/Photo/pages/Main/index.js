@@ -1,22 +1,33 @@
 import Banner from "components/Banner";
-import { Container, Row, Col } from 'bootstrap-4-react'
+import { Container } from 'bootstrap-4-react'
 
 import { Link } from 'react-router-dom'
 import Images from "constants/images";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import PhotoList from 'features/Photo/components/PhotoList'
+import { useNavigate } from "react-router-dom";
+
+import { removePhoto } from 'features/Photo/photoSlice'
 
 function MainPage(props) {
 
     const photos = useSelector(state => state.photos);
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
 
     const handlePhotoEditClick = (photo) => {
         console.log('edit: ', photo)
+
+        navigate('/photos');
     }
 
     const handlePhotoRemoveClick = (photo) => {
         console.log('Remove: ', photo)
+
+        const id = photo.id;
+        dispatch(removePhoto(id))
     }
     return (
         <div>
@@ -27,7 +38,7 @@ function MainPage(props) {
                 <PhotoList 
                     items={ photos }  
                     onPhotoEditClick = { handlePhotoEditClick }
-                    onPhotoRemoveClick = {handlePhotoRemoveClick}
+                    onPhotoRemoveClick = { handlePhotoRemoveClick }
                 >  
                 </PhotoList>
            </Container>
