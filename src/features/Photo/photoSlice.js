@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const photo = createSlice({
     name: 'photos',
-    initialState: [],    // danh sach cac hinh anh (sau nay se push vao)
+    initialState: [],    // danh sach cac hinh anh (sau nay se push vao)    // state.photos
     reducers: {
         addPhoto: (state, action) => {
             const newPhoto = action.payload

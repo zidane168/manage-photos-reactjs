@@ -16,15 +16,35 @@ function AddEditPage(props) {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    // const handleSubmit = (values) => {
+    //     console.log('Form submit: ', values)
+
+    //     const action = addPhoto(values) // action from reduce (photoSlice)
+    //     console.log({ action })
+    //     dispatch(action);
+
+    //     navigate('/photos') // chuyen huong sang photos
+    // }
+
     const handleSubmit = (values) => {
-        console.log('Form submit: ', values)
 
-        const action = addPhoto(values) // action from reduce (photoSlice)
-        console.log({ action })
-        dispatch(action);
+        return new Promise(resolve => {
+            console.log(`Form submit: `, values);
 
-        navigate('/photos') // chuyen huong sang photos
+
+            setTimeout(() => {
+
+                const action = addPhoto(values) // action from reduce (photoSlice)
+                console.log({ action })
+                dispatch(action);
+        
+                navigate('/photos') // chuyen huong sang photos
+                resolve(true)
+            }, 2000)
+        })
+      
     }
+
 
     return (
         <div>

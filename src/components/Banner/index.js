@@ -18,8 +18,8 @@ Banner.defaultProps = {
 function Banner(props) {
 
     const { title, backgroundURL } = props
-    console.log(`title : ${title}`)
-    console.log(backgroundURL) 
+    // console.log(`title : ${title}`)
+    // console.log(backgroundURL) 
     const bannerStyle = backgroundURL ? { backgroundImage: `url(${backgroundURL})` } : { }
 
     return (

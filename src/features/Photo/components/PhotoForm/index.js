@@ -3,7 +3,7 @@ import Images from 'constants/images.js'
 
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Row, Col, Button, FormGroup, Input, Label, Container } from 'reactstrap'
+import { Row, Col, Button, FormGroup, Input, Label, Container, Spinner } from 'reactstrap'
 import { Formik, Form, FastField } from 'formik'
 
 import InputField from 'custom-fields/InputField'
@@ -46,7 +46,7 @@ function PhotoForm(props) {
                     >
                         { formikProps => {
 
-                            const { values, errors, touched } = formikProps;
+                            const { values, errors, touched, isSubmitting } = formikProps;
                             // console.log({ values, errors, touched })
 
 
@@ -78,7 +78,9 @@ function PhotoForm(props) {
 
 
                                     <FormGroup>
-                                        <Button type="submit" color="primary"> Add to album </Button>
+                                        <Button type="submit" color="primary"> 
+                                            { isSubmitting && <Spinner size="md" />}           {/* dang submit , khi click submit chua chay xong va hien thi cai Spinner (reactstrap) */}                                     Add to album 
+                                        </Button>
                                     </FormGroup> 
                                 </Form>
                             )
