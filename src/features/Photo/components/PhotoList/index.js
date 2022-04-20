@@ -30,61 +30,33 @@ function PhotoList(props) {
     }
 
     const getCategoryName = (id) => {
-        // console.log('categoryId: ', id)
-        // return id;
-
+      
+        let name = ""
         PHOTO_CATEGORY_OPTIONS.forEach(category => {
-            console.log('id: ===== ', id);
             
-            let name = ""
-            if (category['value'] == id) {
+            if (category['value'] === id) {
                 name =  category['label']
-                console.log('name: ===== ', name)
                 return name;
             }
-
-            return name;
-        
         });
+        
+        return name;
+
         
     }
     
-
-    const text = (id) => {
-
-        // PHOTO_CATEGORY_OPTIONS.forEach(category => {
-        //     console.log('id: ===== ', id);
-            
-            
-        //     if (category['value'] == id) {
-        //         name =  category['label']
-        //         console.log('name: ===== ', name)
-        //         break;
-        //     }
-        
-        // });
-
-        for (let i = 0; i <= PHOTO_CATEGORY_OPTIONS.length; i++) {
-            if (PHOTO_CATEGORY_OPTIONS[i].value == id) {
-                return `Category: ${PHOTO_CATEGORY_OPTIONS[i].label}`
-            }
-        }
-        return ''
-        // return `Hello, World: ${id}`
-    }
-
-    // console.log('-------- items: ', items)
     return (
         <Row className="photoList">
         {
             // console.log('-------->>> items: ', items)
             items.map( (item, index) => {
 
+                const name = getCategoryName(item.categoryId)
                 return (
                     <Col className='col-md-4 position-relative mb-30' key={ index }>
                         <img className="photoList_image" src={ item.photo } alt = { item.title } />
                         <div className="photoList_title">  { item.title } </div> 
-                        <div className="photoList_category">  { text(item.categoryId) } </div> 
+                        <div className="photoList_category">  { name } </div> 
                         <button 
                             onClick={ () => handleEdit(item) }
                             className="btn btn-lg btn-outline-warning photoList_editBtn text-white bold"> Edit </button>
