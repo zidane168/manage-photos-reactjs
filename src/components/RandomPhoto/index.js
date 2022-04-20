@@ -26,9 +26,9 @@ const getRandomImageURL = () => {
 function RandomPhoto(props) {
     const { name, imageURL, onImageURLChange, onRandomButtonBlur } = props;
 
-    console.group('Random Photo');
-    console.log( { name, imageURL, onImageURLChange, onRandomButtonBlur } )
-    console.groupEnd();
+    // console.group('Random Photo');
+    // console.log( { name, imageURL, onImageURLChange, onRandomButtonBlur } )
+    // console.groupEnd();
 
     const handleRandomPhotoClick = async() => {
         if (onImageURLChange) {

@@ -42,12 +42,12 @@ function PhotoForm(props) {
                     <Formik 
                         initialValues={initialValue}
                         validationSchema={validateSchema}
-                        value={values => { console.log(values)} }       // co button submit moi co dong nay
+                        onSubmit={props.onSubmit}       // co button submit moi co dong nay
                     >
                         { formikProps => {
 
                             const { values, errors, touched } = formikProps;
-                            console.log({ values, errors, touched })
+                            // console.log({ values, errors, touched })
 
 
                             return(
