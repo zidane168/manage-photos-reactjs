@@ -7,19 +7,23 @@ import Banner from 'components/Banner'
 import { useDispatch } from 'react-redux'
 
 import { addPhoto } from 'features/Photo/photoSlice'
+import { useNavigate } from 'react-router-dom'
 
 AddEditPage.propTypes = {};
 
 function AddEditPage(props) {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const handleSubmit = (values) => {
         console.log('Form submit: ', values)
 
-        const action = addPhoto(values)
+        const action = addPhoto(values) // action from reduce (photoSlice)
         console.log({ action })
         dispatch(action);
+
+        navigate('/photos') // chuyen huong sang photos
     }
 
     return (
