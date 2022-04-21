@@ -15,7 +15,7 @@ function Header() {
 
             <Container>
                 <Row>
-                    <Col className="md-8">
+                    <Col className="md-4">
                         <a 
                             className={ clsx(styles.title) }
                             href="https://learn-tech-tips.blogspot.com"
@@ -26,12 +26,22 @@ function Header() {
                         </a>
                     </Col>
 
-                    <Col className="col-md-4 text-right">
+
+                    <Col className="col-md-4 text-center">
                         <NavLink
                             className={ clsx(styles.link) }
                             to="/photos"
                         >
                             Manage Photos Project
+                        </NavLink>
+                    </Col>
+
+
+                    <Col className="col-md-4 text-right">
+                        <NavLink
+                            to="/signIn"
+                        >
+                           Sign In
                         </NavLink>
                     </Col>
                 </Row>

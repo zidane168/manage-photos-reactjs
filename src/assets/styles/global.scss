@@ -27,10 +27,30 @@ html {
     margin-bottom: 30px;
 }
 
+$sizes: 10px, 20px, 30px;
+
+@each $size in $sizes {
+  .ml-#{$size} {
+    margin-left: $size;
+  }
+}
+
 .text-white {
     color: white ;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+.ml-10 {
+    margin-left: 10px !important;
+}
+
+.btn-large  {
+    padding: 10px 30px;
 }

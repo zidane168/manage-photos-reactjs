@@ -5,6 +5,7 @@ const productApi = {
         const url = `/products`;
         return axiosClient.get(url, { 
             params,
+            baseURL: 'https://js-post-api.herokuapp.com/api', 
             // baseURL: 'https://learn-tech-tips.blogspot.com',
             // headers: {
             //     'testing': '111',
@@ -12,10 +13,10 @@ const productApi = {
         });
     },
 
-    get: (id) => {
-        const url = `products/${id}`;
-        return axiosClient.get(url);
-    },
+    // get: (id) => {
+    //     const url = `products/${id}`;
+    //     return axiosClient.get(url);
+    // },
 
 }
 
