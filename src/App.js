@@ -1,6 +1,6 @@
 
 
-import React, { Suspense } from 'react'
+import React, { useEffect, Suspense, useState } from 'react'
 import { BrowserRouter , Route, Routes, Link } from 'react-router-dom'
 
 import './App.scss';
@@ -8,6 +8,7 @@ import NotFound from './components/NotFound'
 // import AddPage from './features/Photo/pages/AddEdit';
 // import MainPage from './features/Photo/pages/Main';
 import Header from './components/Header'
+import productApi from 'api/productApi';
 
 // const Photo = React.lazy(() => import('./features/Photo'));
 
@@ -16,6 +17,29 @@ const AddPage     = React.lazy(() => import('./features/Photo/pages/Add'))
 const EditPage    = React.lazy(() => import('./features/Photo/pages/Edit'))
 
 function App() {
+
+  // test api
+  const [ productList, setProductList ] = useState([])
+
+  useEffect(() => {
+    const fetchProductList = async () => { 
+      try {
+        const params = {
+          _page: 1,
+          _limit: 10
+        }
+
+        const response = await productApi.getAll(params);
+        console.log(response);
+  
+      } catch (error) {
+        console.log('Failed to fetch product list: ', error);
+      }
+    }
+
+    fetchProductList();
+  }, []);
+
   return (
     <div className="photo-app">
       <Suspense fallback={<div> Loading ... </div>}>
