@@ -4,8 +4,8 @@ import { logout } from 'features/Auth/userSlice';
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react';
 
-SignOut.propTypes = {
-
+SignOut.propTypes = {   
+    
 }
 
 function SignOut() {

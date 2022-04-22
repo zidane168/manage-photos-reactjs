@@ -13,20 +13,16 @@ Headers.protoTypes = {};
 function Header() {
 
     const currentUser   = useSelector(state => state.user.currentUser)
-    let name = "";
+    const getName = () => {
+        if (currentUser) {
 
-    useEffect(() => {
-        name = () => {
-            if (currentUser) {
-    
-                console['warn'](' ---------- ')
-                console.log (currentUser.params.name)
-                console['warn'](' ---------- ')
-                return ("Welcome: ", currentUser.params.name)
-            } 
-            return "Sign In"
-        }
-    }, [ currentUser ])
+            console['warn'](' ---------- ')
+            console.log (currentUser.params.name)
+            console['warn'](' ---------- ')
+            return ("Welcome: ", currentUser.params.name)
+        } 
+        return "Sign In"
+    }
 
     return (
         <header>
@@ -57,20 +53,23 @@ function Header() {
 
                     <Col className="col-md-4 text-right">
                         <NavLink
+                            className={ styles.signIn }
                             to="/signIn"
                         >
-                            { name || 'SignIn' }
+                            { getName() || 'SignIn' }
                          
+                            <ul className={ styles.signOut }>
+                                <li>
+                                    <NavLink
+                                        to="/signOut"
+                                        className='text-white'
+                                    >
+                                        Sign out
+                                    </NavLink>
+                                </li>
+                            </ul>
                         </NavLink>
-                        <ul className='signOut'>
-                            <li>
-                                <NavLink
-                                    to="/signOut"
-                                >
-                                    Sign out
-                                </NavLink>
-                            </li>
-                        </ul>
+                       
                     </Col>
                 </Row>
             </Container>
