@@ -5,10 +5,12 @@ import { Button, FormGroup, Spinner } from 'reactstrap'
 import { Formik, Form, FastField } from 'formik'
 
 import InputField from 'custom-fields/InputField'
+import PasswordField from 'custom-fields/PasswordField'
 
 import 'assets/styles/global.scss'
 
 import * as Yup from 'yup'
+
 
 LoginForm.propTypes = {
     onSubmit: PropTypes.func
@@ -22,7 +24,7 @@ function LoginForm(props) {
 
     const { initialValues } = props;
 
-    console.log('initialValues: LoginForm: ', initialValues)
+    // console.log('initialValues: LoginForm: ', initialValues)
 
     const validateSchema = Yup.object().shape({
         username: Yup.string().required('This fields is required'),
@@ -30,7 +32,7 @@ function LoginForm(props) {
     })
 
     return (
-        <div class="d-flex"> 
+        <div className="d-flex"> 
             <Formik 
                 initialValues={ initialValues }
                 validationSchema={validateSchema}
@@ -43,14 +45,14 @@ function LoginForm(props) {
                             <FastField
                                 name="username"
                                 component={ InputField }
-                                label="Title"
+                                label="username"
                                 placeholder="Input your username"
                             />
 
                             <FastField
                                 name="password"
-                                component={ InputField }
-                                label="Title"
+                                component={ PasswordField }
+                                label="password"
                                 placeholder="Input your password"
                             />
 
