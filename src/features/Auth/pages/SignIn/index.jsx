@@ -1,5 +1,5 @@
 import LoginForm from 'features/Auth/components/LoginForm';
-import React from 'react'
+import React, { useEffect } from 'react'
 import './SignIn.scss'
 
 import { useDispatch, useSelector } from 'react-redux' 
@@ -31,13 +31,15 @@ function SignIn() {
         dispatch(login( {values} ))
     }
 
-    if (currentUser.status == 200) {
-        // redirect to photoList
-        navigate('/Photos');
-    }
 
-    console['info']('isLoading: ', isLoading)
-    console['info']('currentUser: ', currentUser)
+    useEffect(() => {
+        if (currentUser && currentUser.status == 200) {
+            console['info']('isLoading: ', isLoading)
+            console['info']('currentUser: ', currentUser)
+            // redirect to photoList
+            navigate('/Photos');
+        }
+    }, [ currentUser ] )
 
     //https://stackblitz.com/edit/react-router-redux-toolkit-fetch-api?file=src%2Fstore%2FuserSlice.js
     return (

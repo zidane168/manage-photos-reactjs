@@ -15,6 +15,7 @@ const MainPage    = React.lazy(() => import('./features/Photo/pages/Main'))
 const AddPage     = React.lazy(() => import('./features/Photo/pages/Add'))
 const EditPage    = React.lazy(() => import('./features/Photo/pages/Edit'))
 const SignInPage  = React.lazy(() => import('./features/Auth/pages/SignIn'))
+const SignOutPage = React.lazy(() => import('./features/Auth/pages/SignOut'))
 
 // https://console.firebase.google.com/project/chatdemo-c3281/settings/general/web:OGVmYzBiZmUtMGZiOC00M2NkLWI4NGItMjljMmUzMWNiNmEx
 
@@ -57,6 +58,8 @@ function App() {
 
           <Routes>
             <Route path="/signIn"     element={ <SignInPage/>} />
+            <Route path="/signOut"     element={ <SignOutPage/>} />
+
             <Route path="/photos"     element={ <MainPage/>} />
             <Route path="/photos/add" element={ <AddPage/>} />
             <Route path="/photos/:photoId"   element={ <EditPage/>} />

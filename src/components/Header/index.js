@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import clsx from 'clsx'
 
 import { NavLink } from 'react-router-dom'
@@ -6,9 +6,28 @@ import { Alert, Container, Col, Row } from 'bootstrap-4-react'
  
 import styles from './Header.module.scss'
 
+import { useSelector } from 'react-redux'
+
 Headers.protoTypes = {};
 
 function Header() {
+
+    const currentUser   = useSelector(state => state.user.currentUser)
+    let name = "";
+
+    useEffect(() => {
+        name = () => {
+            if (currentUser) {
+    
+                console['warn'](' ---------- ')
+                console.log (currentUser.params.name)
+                console['warn'](' ---------- ')
+                return ("Welcome: ", currentUser.params.name)
+            } 
+            return "Sign In"
+        }
+    }, [ currentUser ])
+
     return (
         <header>
             <Alert primary> Primary Alert </Alert>
@@ -36,13 +55,22 @@ function Header() {
                         </NavLink>
                     </Col>
 
-
                     <Col className="col-md-4 text-right">
                         <NavLink
                             to="/signIn"
                         >
-                           Sign In
+                            { name || 'SignIn' }
+                         
                         </NavLink>
+                        <ul className='signOut'>
+                            <li>
+                                <NavLink
+                                    to="/signOut"
+                                >
+                                    Sign out
+                                </NavLink>
+                            </li>
+                        </ul>
                     </Col>
                 </Row>
             </Container>
